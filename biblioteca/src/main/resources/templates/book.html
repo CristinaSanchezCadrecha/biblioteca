@@ -13,8 +13,8 @@
 			<thead>
 				<tr>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDirection=' + ${reverseSortDirection} }">Título del libro</a>
-					</th>
+						th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDirection=' + ${reverseSortDirection} }">Título
+							del libro</a></th>
 					<th><a
 						th:href="@{'/page/' + ${currentPage} + '?sortField=genre&sortDirection=' + ${reverseSortDirection} }">Género</a>
 					</th>
@@ -29,12 +29,33 @@
 					<td th:text="${book.name}"></td>
 					<td th:text="${book.genre}"></td>
 					<td th:text="${book.editorial}"></td>
-					<td><a class="btn btn-primary" >Actualizar</a> <a
-						class="btn btn-danger"  >Eliminar</a></td>
+					<td><a class="btn btn-primary">Actualizar</a> <a
+						class="btn btn-danger">Eliminar</a></td>
 				</tr>
 			</tbody>
 		</table>
+		<div th:if="${totalPages > 1 }">
+			<div class="row col-sm-10">
+				<div class="col-sm-5">Total Filas: [[${totalItems}]]</div>
+				<div class="col-sm-3">
+					<span th:each="i:${#numbers.sequence(1, totalPages)}"><a
+						th:if="${currentPage !=1}"
+						th:href="@{'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDirection='+ ${sortDirection} }">[[${i}]]</a><span
+						th:unless="${currentPage !=1}">[[${i}]]</span></span>
+				</div>
+				<div class="col-sm-1">
+					<a th:if="${currentPage < totalPages}"
+						th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Next</a><span
+						th:unless="${currentPage < totalPages}">Proximo</span>
+				</div>
+				<div class="col-sm-1">
+					<a th:if="${currentPage < totalPages}"
+						th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Last</a><span
+						th:unless="${currentPage < totalPages}">Ultimo</span>
+				</div>
+			</div>
+		</div>
 	</div>
-	
-	</body>
-	</html>
+
+</body>
+</html>
