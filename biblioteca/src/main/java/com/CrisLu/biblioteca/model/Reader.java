@@ -16,7 +16,8 @@ public class Reader {
 	private Integer memberNumber;
 	@Column
 	private String name;
-	@Column
+	
+	@Column(name="phoneNumber")
 	private Integer phoneNumber;
 	@Column
 	private String address;

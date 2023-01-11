@@ -1,5 +1,6 @@
 package com.CrisLu.biblioteca.model;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,17 +11,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="books")
 public class Book {
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 	@Column
 	private String name;
 	@Column
 	private String genre;
 	@Column
 	private String editorial;
+	
+	
 	@Column
-	private Integer year;
+	@Nonnull
+	private String year;
 	@Column
 	private String author;
 	
@@ -29,7 +35,7 @@ public class Book {
 		
 	}
 
-	public Book(Long id, String name, String genre, String editorial, Integer year, String author) {
+	public Book(long id, String name, String genre, String editorial, String year, String author) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,11 +46,11 @@ public class Book {
 	}
 
 	//Getters & Setters
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setIsbn(Long id) {
+	public void setIsbn(long id) {
 		this.id = id;
 	}
 
@@ -72,11 +78,11 @@ public class Book {
 		this.editorial = editorial;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(Integer year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
