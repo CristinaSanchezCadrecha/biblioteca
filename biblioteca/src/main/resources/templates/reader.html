@@ -14,12 +14,12 @@
 			<thead>
 				<tr>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDirection=' + ${reverseSortDirection} }">Nombre</a></th>
+						th:href="@{'/pageReader/' + ${currentPage} + '?sortField=name&sortDirection=' + ${reverseSortDirection} }">Nombre</a></th>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=phoneNumber&sortDirection=' + ${reverseSortDirection} }">Teléfono</a>
+						th:href="@{'/pageReader/' + ${currentPage} + '?sortField=phoneNumber&sortDirection=' + ${reverseSortDirection} }">Teléfono</a>
 					</th>
 					<th><a
-						th:href="@{'/page/' + ${currentPage} + '?sortField=address&sortDirection=' + ${reverseSortDirection} }">Dirección</a>
+						th:href="@{'/pageReader/' + ${currentPage} + '?sortField=address&sortDirection=' + ${reverseSortDirection} }">Dirección</a>
 					</th>
 					<th>Acciones</th>
 				</tr>
@@ -41,17 +41,17 @@
 				<div class="col-sm-3">
 					<span th:each="i:${#numbers.sequence(1, totalPages)}"><a
 						th:if="${currentPage !=1}"
-						th:href="@{'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDirection='+ ${sortDirection} }">[[${i}]]</a><span
+						th:href="@{'/pageReader/' + ${i} + '?sortField=' + ${sortField} + '&sortDirection='+ ${sortDirection} }">[[${i}]]</a><span
 						th:unless="${currentPage !=1}">[[${i}]]</span></span>
 				</div>
 				<div class="col-sm-1">
 					<a th:if="${currentPage < totalPages}"
-						th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Next</a><span
+						th:href="@{'/pageReader/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Next</a><span
 						th:unless="${currentPage < totalPages}">Proximo</span>
 				</div>
 				<div class="col-sm-1">
 					<a th:if="${currentPage < totalPages}"
-						th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Last</a><span
+						th:href="@{'/pageReader/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Last</a><span
 						th:unless="${currentPage < totalPages}">Ultimo</span>
 				</div>
 			</div>
