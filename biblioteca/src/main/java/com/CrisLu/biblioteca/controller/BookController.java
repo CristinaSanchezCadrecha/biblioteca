@@ -19,9 +19,9 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
-	@GetMapping("/")
+	@GetMapping("/book")
 	public String viewBooksPage(Model model) {
-		return findPaginated(1, "nombreBook", "asc", model);
+		return findPaginated(1, "name", "asc", model);
 	}
 	
 	@GetMapping("/page/{pageNum}")
