@@ -29,8 +29,8 @@
 					<td th:text="${book.name}"></td>
 					<td th:text="${book.genre}"></td>
 					<td th:text="${book.editorial}"></td>
-					<td><a class="btn btn-primary">Actualizar</a> <a
-						class="btn btn-danger">Eliminar</a></td>
+					<td><a class="btn btn-primary" th:href="@{/update/{id}(id=${book.id})}">Actualizar</a> 
+					<a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Eliminar</a></td>
 				</tr>
 			</tbody>
 		</table>

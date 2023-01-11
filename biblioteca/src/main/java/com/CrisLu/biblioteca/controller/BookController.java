@@ -7,7 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.CrisLu.biblioteca.model.Book;
@@ -41,12 +43,37 @@ public class BookController {
 		
 		
 		return "book";
-		
-		
-		
-		
-		
 	}
+		@PostMapping("/save")
+		public String saveBook(@ModelAttribute("book") Book book) {
+			bookService.saveBook(book);
+			return "redirect:/book";
+		}
+		
+		@GetMapping("/delete/{id}")
+		public String deleteBook(@PathVariable(value="id") long id) {
+			this.bookService.deleteBookById(id);
+			return "redirect:/book";
+		}
+		
+		@GetMapping("/update/{id}")
+		public String showFormUpdateBook(@PathVariable(value="id") long id, Model model) {
+			Book book = bookService.getBookById(id);
+			model.addAttribute("book", book);
+			return "update_book";
+		}
+		
+		@GetMapping("/add")
+		public String showFormNewBook(Model model) {
+			
+			Book book = new Book();
+			model.addAttribute("book", book);
+			return "new_book";
+		}
+		
+		
+		
+	
 	
 	
 
