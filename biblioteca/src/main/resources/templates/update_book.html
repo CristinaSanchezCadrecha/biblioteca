@@ -11,9 +11,8 @@
 		<h3>Gestion de Libros</h3>
 		<hr>
 		<h2>Actualizar Libro</h2>
-		<form action="#" method="POST" th:action="@{/save}"
-			th:object="${book}">
-			<input type="text" th:field="*{id}" class="form-control mb-4 col-4">
+		<form action="#" method="POST" th:action="@{/save}" th:object="${book}">
+			<input type="hidden" th:field="*{id}">
 			<input type="text" th:field="*{name}" class="form-control mb-4 col-4">
 			<input type="text" th:field="*{genre}" class="form-control mb-4 col-4">
 			<input type="text" th:field="*{editorial}" class="form-control mb-4 col-4">
