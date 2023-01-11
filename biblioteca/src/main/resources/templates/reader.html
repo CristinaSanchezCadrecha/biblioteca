@@ -29,8 +29,8 @@
 					<td th:text="${reader.name}"></td>
 					<td th:text="${reader.phoneNumber}"></td>
 					<td th:text="${reader.address}"></td>
-					<td><a class="btn btn-primary" th:href="@{/update/{memberNumber}(memberNumber=${reader.memberNumber})}">Actualizar</a> 
-					<a class="btn btn-danger" th:href="@{/delete/{memberNumber}(memberNumber=${reader.memberNumber})}">Eliminar</a>
+					<td><a class="btn btn-primary" th:href="@{/updateReader/{memberNumber}(memberNumber=${reader.memberNumber})}">Actualizar</a> 
+					<a class="btn btn-danger" th:href="@{/deleteReader/{memberNumber}(memberNumber=${reader.memberNumber})}">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>
