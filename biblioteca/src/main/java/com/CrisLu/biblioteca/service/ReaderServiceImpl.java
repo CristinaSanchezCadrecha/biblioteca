@@ -34,7 +34,7 @@ public class ReaderServiceImpl implements ReaderService{
 		if(optionalReader.isPresent()) {
 			reader = optionalReader.get();
 		}else {
-			throw new RuntimeException("el lector con id: " + memberNumber + "no se encuentra");
+			throw new RuntimeException("El lector con id: " + memberNumber + "no se encuentra");
 		}
 		return reader;
 	}

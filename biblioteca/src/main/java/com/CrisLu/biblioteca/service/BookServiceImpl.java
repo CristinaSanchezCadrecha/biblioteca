@@ -32,7 +32,7 @@ public class BookServiceImpl implements BookService{
 		if(optionalBook.isPresent()) {
 			book = optionalBook.get();
 		}else {
-			throw new RuntimeException("el libro con id: " + id + "no se encuentra");
+			throw new RuntimeException("El libro con id: " + id + "no se encuentra");
 		}
 		return book;
 	}

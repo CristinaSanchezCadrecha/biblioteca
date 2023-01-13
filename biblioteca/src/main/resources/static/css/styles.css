@@ -1,6 +1,6 @@
 
 
-body {
+.home{
   background-image: url("../assets/bg1.jpg");
   background-color: #cccccc;
 /*   height: 700px; */
@@ -53,6 +53,17 @@ hr{
 	background-color:white;
 	height:5px;
 	border-radius: 5px;
+}
+
+/*FORM***********************************************************************************************************/
+.title-forms{
+	margin-left: 40%;
+}
+
+.forms{
+	width:65%;
+	border:1px solid #345457;
+	margin-left: 25%;
 }
 
 /* FOOTER ********************************************************************************************************/
