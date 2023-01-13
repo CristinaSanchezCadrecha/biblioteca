@@ -15,7 +15,7 @@ public class Book {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Integer id;
 	@Column
 	private String name;
 	@Column
@@ -35,7 +35,7 @@ public class Book {
 		
 	}
 
-	public Book(long id, String name, String genre, String editorial, String year, String author) {
+	public Book(Integer id, String name, String genre, String editorial, String year, String author) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -46,11 +46,11 @@ public class Book {
 	}
 
 	//Getters & Setters
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setIsbn(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
