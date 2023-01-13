@@ -79,7 +79,6 @@ hr{
 	width:50%;
 	margin-left: 25%;
 	padding:5%;
-	background-color: #eeefe7;
 }
 
 .btn-save{
@@ -90,6 +89,9 @@ hr{
 	color:white;
 }
 
+.social-media{
+	margin-top: -10px;
+}
 .icon-color{
 	color:white;
 	margin-right:4.8%;

@@ -53,7 +53,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<div th:if="${totalPages > 1 }">
+		<!-- <div th:if="${totalPages > 1 }">
 			<div class="row col-sm-14">
 				<div class="col-sm-5 text-white">Total Filas: [[${totalItems}]]</div>
 				<div class="col-sm-3">
@@ -73,7 +73,28 @@
 					</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<div th:if="${totalPages > 1 }">
+			<div class="d-flex justify-content-between">
+				<div class="text-white">Total Filas: [[${totalItems}]]</div>
+						<div>
+							<span th:each="i:${#numbers.sequence(1, totalPages)}"><a
+								th:if="${currentPage !=1}"
+								th:href="@{'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDirection='+ ${sortDirection} }">[[${i}]]</a>
+								<span class="text-white me-2" th:unless="${currentPage !=1}">[[${i}]]</span></span>
+						</div>
+						<div>
+							<a class="me-3" th:if="${currentPage < totalPages}"
+							   th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Próximo</a>
+								<span  th:unless="${currentPage < totalPages}">Próximo</span>
+						
+							<a th:if="${currentPage < totalPages}"
+							   th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}">Último</a>
+							   <span th:unless="${currentPage < totalPages}">Último</span>
+						</div>
+				</div>
+			</div>
+		</div>
 	<hr>
 	<footer>
 		<div class="d-flex justify-content-center">
