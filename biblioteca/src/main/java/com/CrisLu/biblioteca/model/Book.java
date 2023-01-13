@@ -3,9 +3,13 @@ package com.CrisLu.biblioteca.model;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,8 +22,9 @@ public class Book {
 	private Integer id;
 	@Column
 	private String name;
+	
 	@Column
-	private String genre;
+	private Genre genre;
 	@Column
 	private String editorial;
 	
@@ -27,15 +32,17 @@ public class Book {
 	@Column
 	@Nonnull
 	private String year;
-	@Column
-	private String author;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="author")
+	private Author author;
 	
 	//Constructors
 	public Book() {
 		
 	}
 
-	public Book(Integer id, String name, String genre, String editorial, String year, String author) {
+	public Book(Integer id, String name, Genre genre, String editorial, String year, Author author) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -62,11 +69,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getGenre() {
+	public Genre getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String genre) {
+	public void setGenre(Genre genre) {
 		this.genre = genre;
 	}
 
@@ -86,11 +93,11 @@ public class Book {
 		this.year = year;
 	}
 
-	public String getAuthor() {
+	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
