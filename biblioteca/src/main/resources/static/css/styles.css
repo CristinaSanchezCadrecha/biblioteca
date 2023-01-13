@@ -56,16 +56,25 @@ hr{
 }
 
 /*FORM***********************************************************************************************************/
+.hr-forms{
+	background-color:#345457;
+	height:5px;
+}
+
 .title-forms{
-	margin-left: 40%;
+	margin-left: 20%;
 }
 
 .forms{
-	width:65%;
-	border:1px solid #345457;
-	margin-left: 25%;
+	width:55%;
+	margin-left: 20%;
+	padding:5%;
+	background-color: #84b1b5;
 }
 
+.btn-save{
+	background-color:#345457;
+}
 /* FOOTER ********************************************************************************************************/
 .p-footer{
 	color:white;

@@ -9,13 +9,13 @@
 <body>
 	<div class="container">
 		<h3>Gestión de Lector</h3>
-		<hr>
-		<h2 class="title-forms">Agregar Lector</h2>
-		<form class="forms" action="#" method="POST" th:action="@{/saveReader}" th:object="${reader}">
-			<label>Nombre</label><input type="text" th:field="*{name}" class="form-control mb-4 col-4">
-			<label>Télefono</label><input type="text" th:field="*{phoneNumber}" class="form-control mb-4 col-4">
-			<label>Dirección</label><input type="text" th:field="*{address}" class="form-control mb-4 col-4">
-			<button type="submit" class="btn btn-info col-2">Guardar Lector</button>
+		<hr class="hr-forms">
+		<h4 class="title-forms mb-3">Agregar Lector</h4>
+		<form class="forms shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-body-tertiary rounded" action="#" method="POST" th:action="@{/saveReader}" th:object="${reader}">
+			<label>Nombre</label><input type="text" th:field="*{name}" class="form-control mb-3  shadow-lg p-3 mb-3">
+			<label>Télefono</label><input type="text" th:field="*{phoneNumber}" class="form-control mb-3  shadow-lg p-3 mb-3">
+			<label>Dirección</label><input type="text" th:field="*{address}" class="form-control mb-3 shadow-lg p-3 mb-3">
+			<button type="submit" class="btn btn-info btn-save ms-5 mb-5">Guardar Lector</button>
 		</form>
 		<hr>
 		<a th:href="@{/reader}">Volver al listado de lectores</a>
