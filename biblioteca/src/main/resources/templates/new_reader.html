@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Agregar Lector</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="container">
-		<h3>Gestión de Lector</h3>
+	<div class="container-forms">
+		<h3 class="text-white">Gestión de Lector</h3>
 		<hr class="hr-forms">
 		<h4 class="title-forms mb-3">Agregar Lector</h4>
 		<form class="forms shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-body-tertiary rounded" action="#" method="POST" th:action="@{/saveReader}" th:object="${reader}">
@@ -17,7 +18,7 @@
 			<label>Dirección</label><input type="text" th:field="*{address}" class="form-control mb-3 shadow-lg p-3 mb-3">
 			<button type="submit" class="btn btn-info btn-save ms-5 mb-5">Guardar Lector</button>
 		</form>
-		<hr>
+		
 		<a th:href="@{/reader}">Volver al listado de lectores</a>
 	</div>
 </body>
