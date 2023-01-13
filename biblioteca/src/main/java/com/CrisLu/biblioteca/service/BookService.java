@@ -8,9 +8,9 @@ import com.CrisLu.biblioteca.model.Book;
 
 public interface BookService {
 	List<Book> getAllBook();
-	Book getBookById(long id);
+	Book getBookById(Integer id);
 	void saveBook(Book book);
-	void deleteBookById(long id);
+	void deleteBookById(Integer id);
 	
 	Page<Book> findPaginate(int pageNum, int pageSize, String sortField, String sortDirection);
 
